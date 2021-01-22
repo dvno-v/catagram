@@ -1,13 +1,14 @@
 const http = require('http');
+const handlers = require('./handlers/handlers');
 const port = 5000;
 
 const app = http.createServer((req, res) => {
-    res.writeHead(200, {
-        'Content-Type': 'text/plain'
-    })
-    res.write('Hello world!')
-    res.end();
-})
+    for (const handler in handlers) {
+        if(handlers[handler](req, res)) {
+            break;
+        }
+    }
+});
 
 console.log(`Server started on port ${port} https://localhost:5000/`)
 
