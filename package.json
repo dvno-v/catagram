@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/dvno-v/catagram/issues"
   },
-  "homepage": "https://github.com/dvno-v/catagram#readme"
+  "homepage": "https://github.com/dvno-v/catagram#readme",
+  "dependencies": {
+    "formidable": "^1.2.2",
+    "mime": "^2.5.0"
+  }
 }

@@ -3,8 +3,8 @@ const handlers = require('./handlers/handlers');
 const port = 5000;
 
 const app = http.createServer((req, res) => {
-    for (const handler in handlers) {
-        if(handlers[handler](req, res)) {
+    for (const handler of handlers) {
+        if(!handler(req, res)) {
             break;
         }
     }
